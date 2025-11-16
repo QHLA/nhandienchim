@@ -2,37 +2,59 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Chatbot Nhận Diện Chim - Gemini API</title>
-                <link rel="stylesheet" href="style.css"> 
-                </head>
-                <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng AI Nhận diện Chim VQG Bidoup Núi Bà</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div class="info-panel">
+            <img src="./logo/logo-hunre.png" alt="Logo HUNRE" class="project-logo">
+            
+            <div class="project-details">
+                <h1 class="project-title">ỨNG DỤNG AI NHẬN DIỆN HÌNH ẢNH CÁC LOÀI CHIM</h1>
                 
-                    <div class="chat-container">
-                            <div class="chat-header">
-                                        🦜 Chatbot Nhận Diện Chim
-                                                </div>
-                                                
-                                                        <div class="chat-box" id="chatBox">
-                                                                    <div class="message bot">
-                                                                                    <p>Chào bạn! Tôi là Chatbot nhận diện loài chim, được cung cấp sức mạnh bởi **Gemini API**.</p>
-                                                                                                    <p>Bạn có thể **tải lên ảnh** một con chim hoặc **nhập câu hỏi** về các loài chim để bắt đầu!</p>
-                                                                                                                </div>
-                                                                                                                        </div>
-                                                                                                                        
-                                                                                                                                <div class="input-area">
-                                                                                                                                            <label for="birdImage" class="file-upload-label">
-                                                                                                                                                            📸 Tải Ảnh
-                                                                                                                                                                        </label>
-                                                                                                                                                                                    <input type="file" id="birdImage" accept="image/*" class="hidden-file-input" onchange="handleImageUpload()">
-                                                                                                                                                                                    
-                                                                                                                                                                                                <input type="text" id="userInput" placeholder="Hỏi tôi về loài chim...">
-                                                                                                                                                                                                
-                                                                                                                                                                                                            <button onclick="sendMessage()">Gửi</button>
-                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                        
-                                                                                                                                                                                                                            <script src="script.js"></script>
-                                                                                                                                                                                                                            
-                                                                                                                                                                                                                            </body>
-                                                                                                                                                                                                                            </html>>
+                <p><strong>Tên đề tài:</strong> Ứng dụng công nghệ trí tuệ nhân tạo xây dựng mô hình nhận diện hình ảnh đối với các loài chim thuộc danh mục loài nguy cấp, quý, hiếm được ưu tiên bảo vệ tại VQG Bidoup Núi Bà</p>
+                <hr class="section-divider">
+                <p><strong>Học viên thực hiện:</strong> Trương Việt Hà | <strong>Mã số:</strong> 8440301</p>
+                <p><strong>Lớp:</strong> CH10A.MT | <strong>Chuyên ngành:</strong> Khoa học Môi trường</p>
+                <hr class="section-divider">
+                <p class="instructor-title">NGƯỜI HƯỚNG DẪN KHOA HỌC:</p>
+                <ul>
+                    <li><strong>Người hướng dẫn:</strong> TS. Lê Hải Hà</li>
+                    <li><strong>Người hướng dẫn:</strong> PGS.TS. Phạm Hồng Tính</li>
+                </ul>
+            </div>
+        </div>
+        <div class="chat-container">
+            <div class="chat-header">
+                Chatbot Phân Loại Các Loài Chim
+            </div>
+
+            <div class="chat-box" id="chatBox">
+                <div class="message bot">
+                    <p>Chào bạn! Tôi là công cụ hỗ trợ nhận diện các loài chim cho đề tài: 
+                        Ứng dụng công nghệ trí tuệ nhân tạo xây dựng mô hình nhận diện hình ảnh đối với các loài chim thuộc danh mục loài nguy cấp, quý, hiếm được ưu tiên bảo vệ tại VQG Bidoup Núi Bà.
+                        Xin mời đặt câu hỏi.
+                    </p>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <label for="birdImage" class="file-upload-label">
+                    📸
+                </label>
+                <input type="file" id="birdImage" accept="image/*" class="hidden-file-input" onchange="handleImageUpload()">
+
+                <input type="text" id="userInput" placeholder="Hỏi tôi về loài chim...">
+
+                <button onclick="sendMessage()">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

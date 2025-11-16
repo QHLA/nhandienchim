@@ -1,19 +1,119 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f4f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
+:root {
+    --primary-color: #00796b; /* Màu Teal đậm */
+    --secondary-color: #00bcd4; /* Màu Xanh sáng */
+    --background-color: #f4f6f9;
+    --chat-bubble-user: #e3f2fd; /* Light Blue */
+    --chat-bubble-bot: #ffffff; 
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+html, body {
+    height: 100%; /* Đảm bảo cả html và body chiếm 100% viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin: 0; 
+    padding: 20px; /* Thêm padding 20px vào body */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng tổng chiều cao */
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: row; 
+    gap: 25px;
+    max-width: 1200px;
+    width: 100%;
+    
+    /* Thiết lập chiều cao bằng viewport trừ đi padding của body */
+    height: calc(100vh - 40px); 
+}
+
+/* -------------------- KHU VỰC THÔNG TIN ĐỀ TÀI (INFO PANEL) -------------------- */
+.info-panel {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    width: 100%;
+    max-width: 500px;
+    align-self: stretch; 
+    height: 94%; /* Giãn ra bằng main-wrapper */
+    
+    /* Thiết lập căn giữa nội dung bên trong */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.project-logo {
+    width: 500px; /* Sửa lại kích thước logo hợp lý hơn */
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.project-details {
+    width: 100%;
+    text-align: center; /* Căn giữa tất cả các thành phần văn bản */
+}
+
+.project-title {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 25px; /* Tăng khoảng cách sau tiêu đề đề tài */
+    text-align: justify;
+}
+
+.project-details p, .project-details li {
+    font-size: 1.0em;
+    line-height: 1.5;
+    margin: 8px 0;
+    text-align: justify;
+}
+
+/* Tăng khoảng cách sau phần thông tin Học viên */
+.project-details p:nth-of-type(2) { 
+    margin-bottom: 25px; 
+}
+
+.project-details strong {
+    color: #333;
+}
+
+.instructor-title {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.project-details ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+    text-align: center;
+}
+
+/* -------------------- KHU VỰC CHATBOT (CHAT CONTAINER) -------------------- */
 .chat-container {
     width: 100%;
-    max-width: 400px;
-    height: 80vh;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    
+    height: 100%; /* Giãn ra bằng main-wrapper */
+    min-height: 700px; 
+    
+    background-color: #ffffff;
+    box-shadow: var(--shadow-light);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -21,99 +121,127 @@ body {
 }
 
 .chat-header {
-    background-color: #4CAF50; /* Xanh lá cây */
+    background-color: var(--primary-color);
     color: white;
     padding: 15px;
     text-align: center;
     font-size: 1.2em;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .chat-box {
     flex-grow: 1;
-    padding: 10px;
+    padding: 15px;
     overflow-y: auto;
     border-bottom: 1px solid #eee;
+    background-color: #fcfcfc;
 }
 
 /* Kiểu dáng tin nhắn */
 .message {
-    padding: 8px;
-    margin: 5px 0;
-    border-radius: 15px;
-    max-width: 70%;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border-radius: 20px;
+    max-width: 80%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     clear: both; 
+}
+
+.message p {
+    margin: 0;
+    text-align: justify; /* Căn đều nội dung đoạn văn */
 }
 
 .user {
     margin-left: auto;
-    background-color: #dcf8c6; 
-    text-align: left;
-    float: right; /* Đẩy tin nhắn sang phải */
+    background-color: var(--chat-bubble-user); 
+    text-align: left; /* Giữ left để justify áp dụng đúng */
+    float: right; 
+    border-top-right-radius: 5px;
 }
 
 .bot {
     margin-right: auto;
-    background-color: #eee; 
+    background-color: var(--chat-bubble-bot); 
+    border: 1px solid #ececec;
     text-align: left;
-    float: left; /* Giữ tin nhắn bên trái */
+    float: left;
+    border-top-left-radius: 5px;
 }
 
-/* Xóa float để input-area không bị ảnh hưởng */
-.chat-box::after {
-    content: "";
-    display: table;
-    clear: both;
-}
 
 /* Khu vực nhập liệu */
 .input-area {
     display: flex;
-    padding: 10px;
+    padding: 15px;
     align-items: center;
     background-color: #f9f9f9;
 }
 
 .input-area input[type="text"] {
     flex-grow: 1;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 25px;
     margin-right: 10px;
     font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.input-area input[type="text"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
 }
 
 .input-area button, .file-upload-label {
     padding: 10px 15px;
     border: none;
-    border-radius: 20px;
+    border-radius: 25px;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 1em;
+    transition: background-color 0.3s, transform 0.1s;
+    font-size: 0.95em;
     text-align: center;
-    line-height: 1; 
+    line-height: 1.2; 
 }
 
 /* Nút Gửi */
 .input-area button {
-    background-color: #2196F3;
+    background-color: #2196F3; /* Blue */
 }
 
 .input-area button:hover {
-    background-color: #0b7dda;
+    background-color: #1976D2;
 }
 
 /* Nút Tải ảnh */
 .file-upload-label {
-    background-color: #FFC107; 
+    background-color: #FF9800; /* Orange - nổi bật cho hành động tải ảnh */
     margin-right: 10px;
 }
 
 .file-upload-label:hover {
-    background-color: #e0a800;
+    background-color: #FB8C00;
 }
 
 .hidden-file-input {
     display: none; 
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 960px) {
+    .main-wrapper {
+        flex-direction: column; 
+        height: auto; /* Trở lại chiều cao tự động khi xếp chồng */
+    }
+    .info-panel {
+        max-width: 100%;
+        margin-bottom: 20px;
+        height: auto; /* Chiều cao tự động */
+    }
+    .chat-container {
+        height: 60vh; /* Giữ 60% viewport khi xếp chồng để tránh quá dài */
+        min-height: 400px;
+        max-width: 100%;
+    }
 }
