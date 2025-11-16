@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Chatbot Nhận Diện Chim - Gemini API</title>
+                <link rel="stylesheet" href="style.css"> 
+                </head>
+                <body>
+                
+                    <div class="chat-container">
+                            <div class="chat-header">
+                                        🦜 Chatbot Nhận Diện Chim
+                                                </div>
+                                                
+                                                        <div class="chat-box" id="chatBox">
+                                                                    <div class="message bot">
+                                                                                    <p>Chào bạn! Tôi là Chatbot nhận diện loài chim, được cung cấp sức mạnh bởi **Gemini API**.</p>
+                                                                                                    <p>Bạn có thể **tải lên ảnh** một con chim hoặc **nhập câu hỏi** về các loài chim để bắt đầu!</p>
+                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                        
+                                                                                                                                <div class="input-area">
+                                                                                                                                            <label for="birdImage" class="file-upload-label">
+                                                                                                                                                            📸 Tải Ảnh
+                                                                                                                                                                        </label>
+                                                                                                                                                                                    <input type="file" id="birdImage" accept="image/*" class="hidden-file-input" onchange="handleImageUpload()">
+                                                                                                                                                                                    
+                                                                                                                                                                                                <input type="text" id="userInput" placeholder="Hỏi tôi về loài chim...">
+                                                                                                                                                                                                
+                                                                                                                                                                                                            <button onclick="sendMessage()">Gửi</button>
+                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                        
+                                                                                                                                                                                                                            <script src="script.js"></script>
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                            </body>
+                                                                                                                                                                                                                            </html>>

@@ -1,0 +1,119 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 400px;
+    height: 80vh;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: #4CAF50; /* Xanh lá cây */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.chat-box {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #eee;
+}
+
+/* Kiểu dáng tin nhắn */
+.message {
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 15px;
+    max-width: 70%;
+    clear: both; 
+}
+
+.user {
+    margin-left: auto;
+    background-color: #dcf8c6; 
+    text-align: left;
+    float: right; /* Đẩy tin nhắn sang phải */
+}
+
+.bot {
+    margin-right: auto;
+    background-color: #eee; 
+    text-align: left;
+    float: left; /* Giữ tin nhắn bên trái */
+}
+
+/* Xóa float để input-area không bị ảnh hưởng */
+.chat-box::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Khu vực nhập liệu */
+.input-area {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+.input-area input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+.input-area button, .file-upload-label {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1em;
+    text-align: center;
+    line-height: 1; 
+}
+
+/* Nút Gửi */
+.input-area button {
+    background-color: #2196F3;
+}
+
+.input-area button:hover {
+    background-color: #0b7dda;
+}
+
+/* Nút Tải ảnh */
+.file-upload-label {
+    background-color: #FFC107; 
+    margin-right: 10px;
+}
+
+.file-upload-label:hover {
+    background-color: #e0a800;
+}
+
+.hidden-file-input {
+    display: none; 
+}
