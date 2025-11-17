@@ -110,7 +110,7 @@ body {
     max-width: 500px;
     
     height: 100%; /* Giãn ra bằng main-wrapper */
-    min-height: 700px; 
+    min-height: 500px; 
     
     background-color: #ffffff;
     box-shadow: var(--shadow-light);
