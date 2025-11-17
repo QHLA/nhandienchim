@@ -63,7 +63,7 @@ function handleImageUpload() {
     
     if (!file) return;
 
-    displayMessage(`Đang gửi ảnh **${file.name}** để nhận diện bởi Gemini...`, 'user');
+    displayMessage(`Đang gửi ảnh **${file.name}** để nhận diện`, 'user');
 
     const formData = new FormData();
     formData.append('image', file);
