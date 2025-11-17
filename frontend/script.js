@@ -1,6 +1,6 @@
 // Vì bạn đang dùng Codespaces/GitHub.dev, chúng ta trỏ đến localhost:5000. 
 // Codespaces sẽ tự động xử lý chuyển tiếp (forwarding) qua URL công khai.
-const API_BASE_URL = 'https://ideal-orbit-g45j6gp66r6vfvg7p-5000.app.github.dev/'; 
+const API_BASE_URL = 'https://nhandienchim.onrender.com'; 
 
 // --- 1. Hàm Hiển Thị Tin Nhắn ---
 function displayMessage(message, sender) {
